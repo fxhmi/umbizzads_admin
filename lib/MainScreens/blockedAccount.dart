@@ -133,7 +133,7 @@ class _BlockedAccountsScreenState extends State<BlockedAccountsScreen> {
                           SizedBox(width: 20,),
 
                           Text(
-                            users.docs[i].get("userNumber"),
+                            users.docs[i].get("nameChatId"),
                             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, letterSpacing: 2.0),
                           ),
 
@@ -183,9 +183,7 @@ class _BlockedAccountsScreenState extends State<BlockedAccountsScreen> {
 
       }
       return Center(
-        child: Text(
-          "Loading...",
-        ),
+        child: CircularProgressIndicator()
       );
     }
 

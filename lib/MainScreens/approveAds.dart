@@ -71,7 +71,30 @@ class _ApproveScreenState extends State<ApproveAdsScreen> {
                     .doc(selectedDoc)
                     .update(adsData).then((value) {
 
-                  print("Ad Approved Successfully.");
+                  print("Ads Approved Successfully.");
+
+                  Route newRoute = MaterialPageRoute(builder: (_) => HomeScreen());
+                  Navigator.pushReplacement(context, newRoute);
+                });
+              },
+            ),
+
+            ElevatedButton(
+              child: Text(
+                "Reject Ads",
+              ),
+              onPressed: ()
+              {
+                Map <String, dynamic> adsData =
+                {
+                  "status" : "rejected",
+                };
+
+                FirebaseFirestore.instance.collection("items")
+                    .doc(selectedDoc)
+                    .update(adsData).then((value) {
+
+                  print("Ads Rejected Successfully.");
 
                   Route newRoute = MaterialPageRoute(builder: (_) => HomeScreen());
                   Navigator.pushReplacement(context, newRoute);

@@ -34,6 +34,12 @@ dependencies:
   intl: ^0.17.0
   timeago: ^3.1.0
   image_slider: ^1.0.2
+  image_picker: ^0.7.5+3
+  cached_network_image: ^3.1.0
+  charts_flutter: ^0.11.0
+  random_string: ^2.3.1
+  firebase_storage: ^8.1.0
+
 
 
 dev_dependencies:

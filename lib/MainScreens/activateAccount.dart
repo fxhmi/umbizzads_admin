@@ -134,7 +134,7 @@ class _ActivateAccountsScreenState extends State<ActivateAccountsScreen> {
                           SizedBox(width: 20,),
 
                           Text(
-                            users.docs[i].get("userNumber"),
+                            users.docs[i].get("nameChatId"),
                             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, letterSpacing: 2.0),
                           ),
 

@@ -4,6 +4,8 @@ import 'package:admin_umbizz/Login/login.dart';
 import 'package:admin_umbizz/MainScreens/activateAccount.dart';
 import 'package:admin_umbizz/MainScreens/approveAds.dart';
 import 'package:admin_umbizz/MainScreens/blockedAccount.dart';
+import 'package:admin_umbizz/MainScreens/business_edu.dart';
+import 'package:admin_umbizz/MainScreens/categories_chart.dart';
 import 'package:admin_umbizz/main.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -90,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
             automaticallyImplyLeading: false,
             centerTitle: true,
             title: Text(
-              "Admin Home Page",
+              "UMBizz Admin",
               style: TextStyle(fontSize: 20.0, color: Colors.white, letterSpacing: 3.0),
             ),
           ),
@@ -178,6 +180,51 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(width: 50.0,),
 
                     ElevatedButton.icon(
+                      icon: Icon(Icons.school, color: Colors.white),
+                      label: Text(
+                        "Manage Business Tips".toUpperCase(),
+                        style: TextStyle(fontSize: 16.0, color: Colors.white, letterSpacing: 3.0),
+                      ),
+                      style: ButtonStyle(
+                        padding: MaterialStateProperty.all(EdgeInsets.all(50)),
+                        backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
+                        foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                      ),
+                      onPressed: ()
+                      {
+                        //go to Business Management page
+                        Route newRoute = MaterialPageRoute(builder: (_) => CreateBlog());
+                        Navigator.pushReplacement(context, newRoute);
+                      },
+                    ),
+                  ],
+                ),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+
+                    ElevatedButton.icon(
+                      icon: Icon(Icons.analytics_sharp, color: Colors.white),
+                      label: Text(
+                        "Report".toUpperCase(),
+                        style: TextStyle(fontSize: 16.0, color: Colors.white, letterSpacing: 3.0),
+                      ),
+                      style: ButtonStyle(
+                        padding: MaterialStateProperty.all(EdgeInsets.all(50)),
+                        backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple),
+                        foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                      ),
+                      onPressed: ()
+                      {
+                        //go to blocked acc page
+                        Route newRoute = MaterialPageRoute(builder: (_) => TaskHomePage());
+                        Navigator.pushReplacement(context, newRoute);
+                      },
+                    ),
+                    SizedBox(width: 50.0,),
+
+                    ElevatedButton.icon(
                       icon: Icon(Icons.person_pin_sharp, color: Colors.white),
                       label: Text(
                         "Logout".toUpperCase(),
@@ -193,13 +240,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         //logout admin
                         FirebaseAuth.instance.signOut().then((value)
                         {
-                        Route newRoute = MaterialPageRoute(builder: (_) => LoginScreen());
-                        Navigator.pushReplacement(context, newRoute);
+                          Route newRoute = MaterialPageRoute(builder: (_) => LoginScreen());
+                          Navigator.pushReplacement(context, newRoute);
                         });
                       },
                     ),
                   ],
                 ),
+
               ],
             ),
           ),
