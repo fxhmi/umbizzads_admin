@@ -180,34 +180,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(width: 50.0,),
 
                     ElevatedButton.icon(
-                      icon: Icon(Icons.school, color: Colors.white),
-                      label: Text(
-                        "Manage Business Tips".toUpperCase(),
-                        style: TextStyle(fontSize: 16.0, color: Colors.white, letterSpacing: 3.0),
-                      ),
-                      style: ButtonStyle(
-                        padding: MaterialStateProperty.all(EdgeInsets.all(50)),
-                        backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
-                        foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                      ),
-                      onPressed: ()
-                      {
-                        //go to Business Management page
-                        Route newRoute = MaterialPageRoute(builder: (_) => CreateBlog());
-                        Navigator.pushReplacement(context, newRoute);
-                      },
-                    ),
-                  ],
-                ),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-
-                    ElevatedButton.icon(
                       icon: Icon(Icons.analytics_sharp, color: Colors.white),
                       label: Text(
-                        "Report".toUpperCase(),
+                        "Report Analytics".toUpperCase(),
                         style: TextStyle(fontSize: 16.0, color: Colors.white, letterSpacing: 3.0),
                       ),
                       style: ButtonStyle(
@@ -222,6 +197,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.pushReplacement(context, newRoute);
                       },
                     ),
+                  ],
+                ),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+
                     SizedBox(width: 50.0,),
 
                     ElevatedButton.icon(
